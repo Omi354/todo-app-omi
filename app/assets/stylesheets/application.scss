@@ -1,0 +1,21 @@
+@import "header";
+@import "flash";
+@import "form";
+@import "variables";
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.35;
+  color: $text-base-color;
+}
+
+a {
+  text-decoration: none;
+  color: $text-base-color;
+}
+
+.container {
+  padding: 33px 26px;
+}

@@ -1,0 +1,44 @@
+@import "variables";
+
+.form {
+  position: relative;
+  height: 95vh;
+  &_text {
+    width: 100%;
+    height: 40px;
+    border-radius: 3%;
+    border: none;
+    background-color: $content-bg-color;
+  }
+  &_label {
+    margin-bottom: 4px;
+    display: block;
+  }
+  &_field {
+    margin-bottom: 30px;
+  }
+  &_btn {
+    width: 100%;
+    background: $primary-color;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    display: block;
+    padding: 4px 0px;
+    border: none;
+    border-radius: 3%;
+    line-height: 1.35;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+  }
+  &_annotation {
+    font-size: 13px;
+  }
+  & a {
+    font-size: 13px;
+  }
+}
