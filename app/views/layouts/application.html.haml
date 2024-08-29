@@ -15,7 +15,10 @@
 
 
   %body
-    %header.header Boards
+    %header.header
+      %p Boards
+      - unless user_signed_in?
+        = link_to('Log-in', new_user_session_path)
     - if flash.present?
       .flash
         - flash.each do |key, value|

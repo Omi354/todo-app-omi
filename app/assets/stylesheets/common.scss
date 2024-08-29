@@ -40,3 +40,11 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  & a {
+    font-size: 12px;
+  }
+}
