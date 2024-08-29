@@ -17,8 +17,12 @@
   %body
     %header.header
       %p Boards
-      - unless user_signed_in?
-        = link_to('Log-in', new_user_session_path)
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class: 'btn btn-flat' do
+          %span Log-out
+      - else
+        = link_to new_user_session_path, class: 'btn btn-flat' do
+          %span Log-in
     - if flash.present?
       .flash
         - flash.each do |key, value|
