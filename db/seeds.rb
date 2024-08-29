@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+john = User.find(1)
+emily = User.find(2)
+
+5.times do
+    john.boards.create!(
+        title: Faker::Lorem.sentence(word_count: 5),
+        desc: Faker::Lorem.sentence(word_count: 15)
+    )
+end
+
+5.times do
+    emily.boards.create(
+        title: Faker::Lorem.sentence(word_count: 5),
+        desc: Faker::Lorem.sentence(word_count: 15)
+    )
+end

@@ -2,6 +2,8 @@
 @import "flash";
 @import "form";
 @import "variables";
+@import "common";
+@import "board";
 
 body {
   font-family: "Lato", sans-serif;
@@ -16,6 +18,6 @@ a {
   color: $text-base-color;
 }
 
-.container {
-  padding: 33px 26px;
+p {
+  margin: 0;
 }
