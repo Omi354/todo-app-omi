@@ -17,5 +17,5 @@
           = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
           .dropdown-content
             = link_to 'Edit', edit_board_path(board)
-            %p Delete
+            = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
   = link_to '+ Add New Board', new_board_path, class: 'newBoardLink'
