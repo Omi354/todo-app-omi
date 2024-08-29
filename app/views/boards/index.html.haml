@@ -1,1 +1,16 @@
-%p てすと
+.container
+  %h2 All Boards
+  - @boards.each do |board|
+    .board
+      .board_content
+        %p.board_title= board.title
+        %p.board_desc= board.desc
+        .board_author
+          = image_tag('default-avatar.png')
+      .board_actions
+        .dropdown
+          = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
+          .dropdown-content
+            %p Edit
+            %p Delete
+  = link_to '+ Add New Board', new_board_path, class: 'newBoardLink'

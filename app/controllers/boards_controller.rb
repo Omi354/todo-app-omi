@@ -1,5 +1,6 @@
-class BoardsController < ActionController::Base
+class BoardsController < ApplicationController
+
   def index
-    render :layout => "application"
+    @boards = Board.all
   end
 end

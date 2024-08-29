@@ -1,0 +1,43 @@
+@import "variables";
+
+.board {
+  padding: 30px 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: $content-bg-color;
+  border-radius: 5%;
+  margin-bottom: 26px;
+  &_content {
+    flex: 1;
+  }
+  &_desc {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 30px;
+  }
+  &_author {
+    margin-left: 5px;
+    width: 30px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    & img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  &_actions {
+    margin-top: 15px;
+  }
+}
+
+.newBoardLink {
+  display: block;
+  width: 100%;
+  height: 160px;
+  text-align: center;
+  line-height: 160px;
+  border-radius: 5%;
+  border: 2px dashed #dddddd;
+}
