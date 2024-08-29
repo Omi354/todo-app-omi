@@ -9,12 +9,21 @@
     border-radius: 3%;
     border: none;
     background-color: $content-bg-color;
+    padding: 5px 10px;
+  }
+  &_textfield {
+    width: 100%;
+    height: 200px;
+    border-radius: 3%;
+    border: none;
+    background-color: $content-bg-color;
+    padding: 10px;
   }
   &_label {
     margin-bottom: 4px;
     display: block;
   }
-  &_field {
+  &_item {
     margin-bottom: 30px;
   }
   &_btn {

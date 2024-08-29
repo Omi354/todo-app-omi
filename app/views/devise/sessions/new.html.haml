@@ -2,10 +2,10 @@
   .form
     %h2.form_title Sign in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form_field
+      .form_item
         = f.label :email, class: 'form_label'
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form_text'
-      .form_field
+      .form_item
         = f.label :password, class: 'form_label'
         = f.password_field :password, autocomplete: "current-password", class: 'form_text'
       - if devise_mapping.rememberable?
