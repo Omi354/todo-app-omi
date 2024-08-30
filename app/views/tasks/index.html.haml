@@ -1,18 +1,19 @@
 .container
   %h2 Brackets
   - @tasks.each do |task|
-    .card
-      .card_content
-        %p.card_title= task.name
-        %p.card_desc= task.desc
-        .card_footer
-          .card_author
-            = image_tag('default-avatar.png')
-            .card_authorDesc
-              %p 作成者:
-              %p=  User.find(task.user_id).user_name
-          .card_comments
-            %p 23
-            .card_commentsImage
-              = image_tag 'shape.png'
+    = link_to board_task_path(id: task.id, board_id: params[:board_id])	do
+      .card
+        .card_content
+          %p.card_title= task.name
+          %p.card_desc= task.desc
+          .card_footer
+            .card_author
+              = image_tag('default-avatar.png')
+              .card_authorDesc
+                %p 作成者:
+                %p=  User.find(task.user_id).user_name
+            .card_comments
+              %p 23
+              .card_commentsImage
+                = image_tag 'shape.png'
   = link_to '+ Add New Card', new_board_task_path, class: 'newCardLink'

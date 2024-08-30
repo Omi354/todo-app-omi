@@ -1,0 +1,13 @@
+.container
+  .task
+    .task_head
+      %h2= @task.name
+      - if current_user.id == @task.user.id
+        .dropdown
+          = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
+          .dropdown-content
+            -# = link_to 'Edit', edit_board_path(board)
+            -# = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
+    .task_body
+      .task_desc 
+        %p= @task.desc

@@ -18,6 +18,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
   private
   def task_params
     params.require(:task).permit(:name, :desc, :deadline)

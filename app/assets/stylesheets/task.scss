@@ -1,0 +1,20 @@
+@import "variables";
+
+.task {
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &_body {
+    margin-bottom: 35px;
+  }
+  &_desc {
+    padding: 20px 15px 26px;
+    border-radius: 5%;
+    background-color: $content-bg-color;
+    & p {
+      font-size: 14px;
+    }
+  }
+}
