@@ -14,3 +14,12 @@
           =image_tag @task.image
       .task_desc
         %p= @task.desc
+    .comment
+      %h3 Comment
+      - @comments.each do |comment|
+        .comment_wrapper
+          .comment_avatar
+            = image_tag 'default-avatar.png'
+          .comment_content
+            = comment.content
+      = link_to '+ Add New Comment', new_board_task_comment_path(board_id: params[:board_id], task_id: params[:id]), class: 'newCardLink comment'

@@ -1,0 +1,10 @@
+.container
+  %h2 New Comment
+  .form
+    = form_with model: @comment,url: board_task_comments_path(board_id: params[:board_id], task_id: params[:task_id]), method: :post, local: true do |f|
+      .form_item
+        = f.label :content, 'New Comment', class: 'form_label'
+        = f.text_area :content, class: 'form_textfield'
+
+      .form_item
+        = f.submit 'Submit', class: 'form_btn'
