@@ -7,7 +7,7 @@
           = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
           .dropdown-content
             = link_to 'Edit', edit_board_task_path(board_id: params[:board_id], id: @task)
-            -# = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
+            = link_to 'Delete', board_task_path(board_id: params[:board_id], id: params[:id]), method: :delete, data: { confirm: '削除してもよろしいですか?' }
     .task_body
       .task_desc
         %p= @task.desc

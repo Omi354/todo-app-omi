@@ -30,11 +30,18 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params.merge(board_id: params[:board_id]))
       flash[:notice] = "タスクの編集に成功しました"
-      redirect_to board_tasks_path(board_id: params[:board_id])
+      redirect_to board_task_path(board_id: params[:board_id], id: @task)
     else
       flash.now[:alert] = "タスクの編集に失敗しました"
       render :edit
     end
+  end
+
+  def destroy
+    task = current_user.tasks.find(params[:id])
+    task.destroy!
+    flash[:notice] = "タスクを削除しました"
+    redirect_to board_tasks_path(board_id: params[:board_id])
   end
 
   private
