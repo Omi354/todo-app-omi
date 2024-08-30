@@ -1,7 +1,7 @@
 .container
   %h2 All Boards
   - @boards.each do |board|
-    = link_to tasks_path do
+    = link_to board_tasks_path(board_id: board.id) do
       .card
         .card_content
           %p.card_title= board.title
