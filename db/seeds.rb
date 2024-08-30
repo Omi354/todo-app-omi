@@ -9,15 +9,15 @@ john = User.find(1)
 emily = User.find(2)
 
 5.times do
-    john.boards.create!(
-        title: Faker::Lorem.sentence(word_count: 5),
-        desc: Faker::Lorem.sentence(word_count: 15)
+    john.tasks.create!(
+        name: Faker::Lorem.sentence(word_count: 5),
+        desc: Faker::Lorem.sentence(word_count: 10)
     )
 end
 
 5.times do
-    emily.boards.create(
-        title: Faker::Lorem.sentence(word_count: 5),
-        desc: Faker::Lorem.sentence(word_count: 15)
+    emily.tasks.create(
+        name: Faker::Lorem.sentence(word_count: 5),
+        desc: Faker::Lorem.sentence(word_count: 10)
     )
 end
