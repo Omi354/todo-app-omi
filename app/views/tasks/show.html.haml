@@ -9,5 +9,8 @@
             = link_to 'Edit', edit_board_task_path(board_id: params[:board_id], id: @task)
             = link_to 'Delete', board_task_path(board_id: params[:board_id], id: params[:id]), method: :delete, data: { confirm: '削除してもよろしいですか?' }
     .task_body
+      - if @task.image.attached?
+        .task_image
+          =image_tag @task.image
       .task_desc
         %p= @task.desc

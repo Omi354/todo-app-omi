@@ -1,7 +1,11 @@
 .container
   %h2 New Card
   .form
-    = form_with model: @task, url: board_tasks_path(board_id: params[:board_id]), local: true do |f|
+    = form_with model: @task, url: board_tasks_path(board_id: params[:board_id]), local: true, multipart: true do |f|
+      .form_item
+        = f.label :image, class: 'form_label'
+        = f.file_field :image
+
       .form_item
         = f.label :name, 'Name', class: 'form_label'
         = f.text_field :name, class: 'form_text'

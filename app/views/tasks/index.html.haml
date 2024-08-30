@@ -4,6 +4,9 @@
     = link_to board_task_path(id: task.id, board_id: params[:board_id])	do
       .card
         .card_content
+          - if task.image.attached?
+            .card_image
+              =image_tag task.image
           %p.card_title= task.name
           %p.card_desc= task.desc
           .card_footer
