@@ -26,8 +26,19 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:id])
+    board = Board.find(params[:id])
+    
+    if current_user.id == board.user.id
+      @board = board
+    else
+      flash[:alert] = "他人の作成したBoardは編集できません"
+      redirect_to boards_path
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "そのBoardは存在しません"
+    redirect_to boards_path
   end
+  
 
   def update
     @board = current_user.boards.find(params[:id])

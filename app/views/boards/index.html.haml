@@ -11,11 +11,11 @@
             %p 作成者:
             %p=  User.find(board.user_id).user_name
 
-
-      .board_actions
-        .dropdown
-          = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
-          .dropdown-content
-            = link_to 'Edit', edit_board_path(board)
-            = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
+      - if current_user.id == board.user.id
+        .board_actions
+          .dropdown
+            = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
+            .dropdown-content
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
   = link_to '+ Add New Board', new_board_path, class: 'newBoardLink'
