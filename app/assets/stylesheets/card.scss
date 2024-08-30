@@ -2,9 +2,7 @@
 
 .card {
   padding: 30px 16px 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: block;
   background-color: $content-bg-color;
   border-radius: 5%;
   margin-bottom: 26px;
@@ -66,8 +64,10 @@
       object-fit: cover;
     }
   }
-  &_actions {
-    margin-top: 15px;
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
