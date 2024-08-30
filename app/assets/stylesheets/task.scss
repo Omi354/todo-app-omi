@@ -1,0 +1,32 @@
+@import "variables";
+
+.task {
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &_body {
+    margin-bottom: 35px;
+  }
+  &_image {
+    width: 100%;
+    max-height: 170px;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &_desc {
+    padding: 20px 15px 26px;
+    border-radius: 5%;
+    background-color: $content-bg-color;
+    & p {
+      font-size: 14px;
+    }
+  }
+}
