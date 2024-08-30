@@ -4,7 +4,14 @@
     = link_to board_tasks_path(board_id: board.id) do
       .card
         .card_content
-          %p.card_title= board.title
+          .card_head
+            %p.card_title= board.title
+            - if current_user.id == board.user.id
+              .dropdown
+                = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
+                .dropdown-content
+                  = link_to 'Edit', edit_board_path(board)
+                  = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
           %p.card_desc= board.desc
           .card_author
             = image_tag('default-avatar.png')
@@ -12,11 +19,4 @@
               %p 作成者:
               %p=  User.find(board.user_id).user_name
 
-        - if current_user.id == board.user.id
-          .card_actions
-            .dropdown
-              = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
-              .dropdown-content
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
   = link_to '+ Add New Board', new_board_path, class: 'newCardLink'

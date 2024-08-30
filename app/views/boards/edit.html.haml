@@ -1,14 +1,3 @@
 .container
   %h2= @board.title
-  .form
-    = form_with model: @board, local: true do |f|
-      .form_item
-        = f.label :title, 'Name', class: 'form_label'
-        = f.text_field :title, class: 'form_text'
-
-      .form_item
-        = f.label :desc, 'Description', class: 'form_label'
-        = f.text_area :desc, class: 'form_textfield'
-
-      .form_item
-        = f.submit 'Submit', class: 'form_btn'
+  = render 'boardForm', board: @board
