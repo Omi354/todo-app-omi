@@ -1,0 +1,27 @@
+@import "variables";
+.comment {
+  &_title {
+    font-weight: 400;
+    font-size: 26px;
+  }
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  &_avatar {
+    width: 40px;
+    min-width: 40px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &_content {
+    font-size: 14px;
+  }
+}
