@@ -79,4 +79,9 @@
   line-height: 160px;
   border-radius: 5%;
   border: 2px dashed #dddddd;
+  &.comment {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+  }
 }
