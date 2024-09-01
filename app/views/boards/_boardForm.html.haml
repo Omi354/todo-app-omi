@@ -1,3 +1,8 @@
+- if board.errors.any?
+  %ul
+    - board.errors[:title].each do |message|
+      %li= message
+
 .form
   = form_with model: board, local: true do |f|
     .form_item
