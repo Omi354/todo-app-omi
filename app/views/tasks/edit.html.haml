@@ -1,5 +1,9 @@
 .container
   %h2= @task.name
+  - if @task.errors.any?
+    %ul
+      - @task.errors.full_messages.each do |message|
+        %li= message
   .form
     = form_with model: @task, url: board_task_path(board_id: params[:board_id], id: params[:id]), method: :put, local: true, multipart: true do |f|
       .form_item

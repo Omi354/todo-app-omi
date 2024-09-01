@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        board:
+          attributes:
+            title:
+              blank: "ボード名を入力してください"
