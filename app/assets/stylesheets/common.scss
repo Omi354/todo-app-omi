@@ -6,7 +6,13 @@
 
 .dropbtn {
   border: none;
-  width: 24px;
+  &_board {
+    width: 24px;
+  }
+  &_task {
+    width: 24px;
+    margin-bottom: 25px;
+  }
 }
 
 .dropdown {
@@ -21,8 +27,11 @@
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 8%;
+  border-radius: 5px;
   padding: 10px 14px;
+  &_header {
+    width: 124px;
+  }
 }
 
 .dropdown-content a {
@@ -31,6 +40,9 @@
   color: $text-base-color;
   font-size: 12px;
   font-family: "Lato", sans-serif;
+  &:first-child {
+    margin-bottom: 10px;
+  }
 }
 
 .dropdown-content a:hover {
@@ -39,13 +51,4 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  & a {
-    font-size: 12px;
-  }
 }

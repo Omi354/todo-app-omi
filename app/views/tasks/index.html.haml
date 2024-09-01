@@ -10,13 +10,15 @@
           %p.card_title= task.name
           %p.card_desc= task.desc
           .card_footer
-            .card_author
-              = image_tag('default-avatar.png')
-              .card_authorDesc
-                %p 作成者:
-                %p=  User.find(task.user_id).user_name
+            .card_avatars
+              - @users_with_avatars[task.id].each do |avatar|
+                - if User.find(avatar).avatar.attached?
+                  = image_tag task.user.avatar, class: 'card_avatar'
+                - else
+                  = image_tag 'default-avatar.png', class: 'card_avatar'
+
             .card_comments
-              %p 23
+              %p= task.comments.count
               .card_commentsImage
                 = image_tag 'shape.png'
   = link_to '+ Add New Card', new_board_task_path, class: 'newCardLink'

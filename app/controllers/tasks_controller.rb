@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.where(board_id: params[:board_id])
+    @users_with_avatars = {}
+    
+    @tasks.each do |task|
+      @users_with_avatars[task.id] = avatars(task)
+    end
   end
 
   def new
@@ -48,6 +53,20 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:name, :desc, :deadline, :image)
+  end
+
+  def avatars(task)
+    avatars = []
+    avatars << task.user.id
+
+    comments = task.comments.all
+    comments.each do |comment|
+      if !avatars.include?(comment.user.id)
+        avatars << comment.user.id
+      end
+    end
+
+    avatars
   end
 
 end

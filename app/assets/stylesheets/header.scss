@@ -1,6 +1,20 @@
 @import "variables";
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #efefef;
   padding: 17px 30px;
+  & a {
+    font-size: 12px;
+  }
+  &_avatarImage {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
 }
