@@ -27,6 +27,8 @@ gem 'active_decorator'
 gem 'active_model_serializers'
 gem 'devise'
 gem 'aws-sdk-s3', require: false
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
