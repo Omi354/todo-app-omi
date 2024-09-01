@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
     @board = current_user.boards.build(board_params)
     if @board.save
       flash[:notice] = "Boardを作成しました"
-      redirect_to boards_path
+      redirect_to board_tasks_path(board_id: @board.id)
     else
       flash.now[:alert] = "作成に失敗しました"
       render :new
