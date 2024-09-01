@@ -17,12 +17,20 @@
   %body
     %header.header
       %p Boards
-      - if user_signed_in?
-        = link_to destroy_user_session_path, method: :delete, class: 'btn btn-flat' do
-          %span Log-out
-      - else
-        = link_to new_user_session_path, class: 'btn btn-flat' do
-          %span Log-in
+      .header_avatar
+        - if current_user&.avatar&.attached?
+          .dropdown
+            = image_tag current_user.avatar, class: 'dropbtn header_avatarImage'
+            .dropdown-content.dropdown-content_header
+              = link_to 'プロフィール編集', edit_user_registration_path
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        - elsif user_signed_in?
+          .dropdown
+            = image_tag 'default-avatar.png', class: 'dropbtn header_avatarImage'
+            .dropdown-content.dropdown-content_header
+              = link_to 'プロフィール編集', edit_user_registration_path
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+
     - if flash.present?
       .flash
         - flash.each do |key, value|

@@ -14,7 +14,10 @@
                   = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '削除してもよろしいですか?' }
           %p.card_desc= board.desc
           .card_author
-            = image_tag('default-avatar.png')
+            - if board.user&.avatar&.attached?
+              = image_tag board.user.avatar
+            - else
+              = image_tag('default-avatar.png')
             .card_authorDesc
               %p 作成者:
               %p=  User.find(board.user_id).user_name

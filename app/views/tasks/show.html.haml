@@ -4,7 +4,7 @@
       %h2= @task.name
       - if current_user.id == @task.user.id
         .dropdown
-          = image_tag('actions.svg', class: 'dropbtn dropbtn_board')
+          = image_tag('actions.svg', class: 'dropbtn dropbtn_task')
           .dropdown-content
             = link_to 'Edit', edit_board_task_path(board_id: params[:board_id], id: @task)
             = link_to 'Delete', board_task_path(board_id: params[:board_id], id: @task), method: :delete, data: { confirm: '削除してもよろしいですか?' }
@@ -19,7 +19,10 @@
       - @comments.each do |comment|
         .comment_wrapper
           .comment_avatar
-            = image_tag 'default-avatar.png'
+            - if comment.user&.avatar&.attached?
+              = image_tag comment.user.avatar
+            - else
+              = image_tag('default-avatar.png')
           .comment_content
             = comment.content
       = link_to '+ Add New Comment', new_board_task_comment_path(board_id: params[:board_id], task_id: params[:id]), class: 'newCardLink comment'
