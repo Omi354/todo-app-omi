@@ -1,0 +1,19 @@
+{
+  "name": "todo app",
+  "description": "This is todoapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/Omi354/todo-app-omi",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:essential-0"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
